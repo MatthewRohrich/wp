@@ -1,1 +1,12 @@
 /* Insert your styles here */
+header {
+  margin-top: 40px;
+}
+
+section {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
