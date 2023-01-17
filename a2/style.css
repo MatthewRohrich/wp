@@ -11,6 +11,34 @@ html {
   scroll-behavior: smooth;
 }
 
+#movieContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#movieContainer div {
+  background-color: #3bbced;
+  padding: 10px;
+}
+
+#movieContainer div .movieTitle {
+  background-color: #606060;
+  writing-mode: vertical-rl;
+}
+
+.movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#movieContainer div .movieCards {
+  border: 2px red groove;
+  background-color: aquamarine;
+  padding: 5px;
+}
 /* animated movie cards based on Trevors Lecture Notes */
 div.movieCard {
   /* border: dotted black thin;*/
@@ -79,14 +107,11 @@ div.movieCard > div > img:nth-child(2) {
   text-decoration: none;
   background-color: #eeeeee;
   color: #333333;
-  padding: 2px 6px 2px 6px;
+  padding: 0.4em 0.7em 0.4em 0.7em;
   border-top: 1px solid #cccccc;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #cccccc;
   border-radius: 4px;
   cursor: pointer;
-  padding: 7px;
-  margin-left: 40%;
-  margin: 0 auto;
 }
