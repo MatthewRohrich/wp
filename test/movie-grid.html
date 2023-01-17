@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Grid</title>
+    <!-- <link
+      id="stylecss"
+      type="text/css"
+      rel="stylesheet"
+      href="style.css"
+    > -->
+    <style>
+      nav{
+          background: #a7ffeb;
+          grid-area: nav;
+      }
+      
+      main {
+          background: #84ffff;
+          
+      }
+      section {
+          border: 4px black groove;
+
+        }
+
+      .cardContainer {
+          border: 4px olivedrab groove;
+          display: grid;
+          height: 100vh;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 5px;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas:
+              "movieCard movieTitle movieCard movieTitle"
+              "movieCard movieTitle movieCard movieTitle";
+              
+      }
+      
+        /*
+        .movie {
+            
+            border: 4px hotpink groove; 
+            grid-area: movie;
+
+        }
+        */
+
+        .movieCard {
+          border: 4px green groove;
+          grid-area: movieCard;
+          
+        }
+
+        .movieTitle {
+          border: 4px yellow groove;
+          grid-area:  movieTitle;
+
+        }
+
+        .movieFront{
+          border: 4px blue groove;
+   
+        }
+
+        .movieBack {
+          border: 4px red groove;
+
+        }
+
+        footer {
+            background: #ff7388; 
+            grid-area: footer;
+        }
+    </style>
+    <h2>previewing php files in VSCODE  is awful</h2>
+  </head>
+  <body>
+    <nav>Navbar</nav>
+    <main>Main</main>
+    <section id="nowshowing">
+      <h2>Now Showing</h2>
+      <div id="cardContainer">
+        <!-- flipping cards Based on Trevors lecture notes -->
+        <div class="movieCard">
+          MovieCard Avatar
+        </div>
+        <div class="movieTitle">
+          <h3 class="movieTitle">Avatar: The Way of Water</h3>
+          <h4 class="movieRating">(M)</h4>
+        </div>
+      </div>
+    </section>
+    <footer>Footer</footer>
+  </body>
+</html>
