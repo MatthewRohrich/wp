@@ -4,62 +4,160 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid-test</title>
-    <style>.container {
+    <title>movie-test</title>
+    <style>
+      body{
+        color: #ffffff;
+        font-family: 'Nunito Semibold';
+        text-align: center;
+      }
+
+      #movieContainer{
         display: grid;
-        height: 100vh;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: .2fr 1.5fr 1.2fr 0.8fr;
-        grid-template-areas:
-            "nav nav nav nav"
-            "sidebar main main main"
-            "sidebar content1 content2 content3"
-            "sidebar footer footer footer";
-      
-      }
-        nav{
-          background: #a7ffeb;
-          grid-area: nav;
-        }
-      
-      main {
-        background: #84ffff;
-        grid-area: main;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:10px;
+        max-width: 960px;
+        margin: 0 auto;
       }
       
-      #sidebar {
-        background: #c79cc1;
-        grid-area: sidebar;
+      #movieContainer div{
+        background-color: #3bbced;
+        padding: 10px;
       }
-      
-      #content1 {
-        background: #9146a0; 
-        grid-area: content1;
+
+      #movieContainer div .movieTitle{
+        background-color: #606060;
+        writing-mode: vertical-rl
       }
-      #content2 {
-        background: #ab83ad; 
-        grid-area: content2;
+
+      .movie{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
-      #content3 {
-        background: #ce73ff; 
-        grid-area: content3;
+      #movieContainer div .movieCards {
+        border: 2px red groove;
+        background-color: aquamarine;
+        padding: 5px;
+
       }
-      footer {
-        background: #ff7388; 
-        grid-area: footer;
-      }
+
+
+
+
+    .bookingButton {
+      font: bold 14px Arial;
+      text-decoration: none;
+      background-color: #eeeeee;
+      color: #333333;
+      padding: 2px 6px 2px 6px;
+      border-top: 1px solid #cccccc;
+      border-right: 1px solid #333333;
+      border-bottom: 1px solid #333333;
+      border-left: 1px solid #cccccc;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 7px;
+      margin: 0 auto; 
+    }
     </style>
     <h2>previewing php files in VSCODE  is awful</h2>
   </head>
   <body>
-    <div class="container">
-      <nav>Navbar</nav>
-      <main>Main</main>
-      <div id="sidebar">sidebar</div>
-      <div id="content1">Content1</div>
-      <div id="content2">Content2</div>
-      <div id="content3">Content3</div>
-      <footer>Footer</footer>
+    <div id="movieContainer">
+      <div class="movie">
+        <div class="movieCards">
+          <div class="movieFront">
+            <!-- image sourced from -->
+            <!-- https://www.imdb.com/title/tt1630029/mediaviewer/rm92486145/?ref_=tt_ov_i -->
+            <!-- https://m.media-amazon.com/images/M/MV5BYjExNDJkMWEtZjM5Yi00NjA5LThlZTMtZmI0MTU1NzYxNDgzXkEyXkFqcGdeQXVyNzA4NTc5MjE@._V1_.jpg%22 -->
+            <img src="../../media/avatar_way_poster_400.png" alt="Avatar: The Way of Water, movie poster">
+          </div>
+          <div class="movieBack">
+            <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
+            <ul>
+              <li>Mon/Tue - 9pm</li>
+              <li>Wed/Fri - 9pm</li>
+              <li>Sat/Sun - 6pm</li>
+              <li>Booking link</li>
+            </ul>
+            <a class="bookingButton" href="booking.php?movie=ACT">Book Now</a>
+          </div>
+        </div>
+        <div class="movieTitle">
+          <p>Avatar: The Way of Water</p>
+          <p>( M )</p>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="movieCards">
+          <div class="movieFront">
+            <!-- image sourced from -->
+            <!-- https://www.imdb.com/title/tt17076046/mediaviewer/rm629541889/?ref_=tt_ov_i -->
+            <!-- https://m.media-amazon.com/images/M/MV5BOWRiNmI1OTItYjc0Zi00YTYwLWI4OTEtMmE0YTNlODJkOTQwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg -->
+            <img src="../../media/weird_al_poster_400.png" alt="Weird: The Al Yankovic Story, movie poster">
+          </div>
+          <div class="movieBack">
+            <p>Explores every facet of Yankovic's life, from his meteoric rise to fame with early hits like 'Eat It' and 'Like a Surgeon' to his torrid celebrity love affairs and famously depraved lifestyle.</p>
+            <ul>
+              <li>Wed/Fri - 12pm</li>
+              <li>Sat/Sun - 3pm</li>
+              <li>Booking link</li>
+            </ul>
+            <a class="bookingButton" href="booking.php?movie=ACT">Book Now</a>
+          </div>
+        </div>
+        <div class="movieTitle">
+          <p>Weird: The Al Yankovic Story</p>
+          <p>( M )</p>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="movieCards">
+          <div class="movieFront">
+            <!-- image sourced from -->
+            <!-- https://www.imdb.com/title/tt3915174/mediaviewer/rm342562561/?ref_=tt_ov_i -->
+            <!-- https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_.jpg -->
+            <img src="../../media/puss_in_boots_poster_400.png" alt="Puss in Boots: The Last Wish, movie poster">
+          </div>
+          <div class="movieBack">
+            <p>Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.</p>
+            <ul>
+              <li>Mon/Tue - 12pm</li>
+              <li>Wed/Fri - 6pm</li>
+              <li>Sat/Sun - 12pm</li>
+              <li>Booking link</li>
+            </ul>
+            <a class="bookingButton" href="booking.php?movie=ACT">Book Now</a>
+          </div>
+        </div>
+        <div class="movieTitle">
+          <p>Puss in Boots: The Last Wish</p>
+          <p>( PG )</p>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="movieCards">
+          <div class="movieFront">
+            <!-- image sourced from -->
+            <!-- https://www.imdb.com/title/tt9308390/mediaviewer/rm898035713/?ref_=tt_ov_i -->
+            <!-- https://m.media-amazon.com/images/M/MV5BNWU5NTEwOGEtZTMzYS00ODFlLWE5MjAtYTZjOGU3NjA1YWMxXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_.jpg -->
+            <img src="../../media/margrete_queen_poster_400.png" alt="Margrete: Queen of the North, movie poster">
+          </div>
+          <div class="movieBack">
+            <p>1402. Queen Margrete is ruling Sweden, Norway and Denmark through her adopted son, Erik. But a conspiracy is in the making and Margrete finds herself in an impossible dilemma that could shatter her life's work: the Kalmar Union.</p>
+            <ul>
+              <li>Mon/Tue - 6pm</li>
+              <li>Sat/Sun - 9pm</li>
+              <li>Booking link</li>
+            </ul>
+            <a class="bookingButton" href="booking.php?movie=ACT">Book Now</a>
+          </div>
+        </div>
+        <div class="movieTitle">
+          <p>Margrete: Queen of the North</p>
+          <p>( M )</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
