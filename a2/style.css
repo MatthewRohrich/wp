@@ -1,4 +1,5 @@
 /* Insert your styles here */
+/* css information referenced from w3Schools and MDN - Mozilla Developer Network */
 header {
   margin-top: 40px;
 }
@@ -29,30 +30,34 @@ html {
   writing-mode: vertical-rl;
 }
 
-.movie {
+div.movie {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
+/*
 #movieContainer div .movieCards {
   border: 2px red groove;
   background-color: aquamarine;
-  padding: 5px;
-}
+  padding: 10px;
+} */
+
 /* animated movie cards based on Trevors Lecture Notes */
-div.movieCard {
-  /* border: dotted black thin;*/
+div.movieCards {
+  /* border: 5px rgb(255, 0, 251) groove; */
   background-color: #fff;
-  display: inline-block;
+
   box-sizing: border-box;
-  height: 600px;
-  width: 430px;
+  height: 40em;
+  width: 28em;
+  /* height: 600px; */
+  /* width: 430px;*/
   /* padding: 5px; */
   overflow: auto;
   position: relative;
 }
 
-div.movieCard > div {
+div.movieCards > div {
   height: calc(100% - 10px);
   width: calc(100% - 10px);
   box-sizing: border-box;
@@ -63,25 +68,39 @@ div.movieCard > div {
   -webkit-backface-visibility: hidden;
 }
 
-div.movieCard > div:nth-child(1) {
+div.movieTitle {
+  height: calc(100% - 30px);
+  box-sizing: border-box;
+  position: relative;
+  top: 20px;
+}
+
+div.movieFront > img {
+  /* front image */
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   /* border: 4px red groove; */
   transform: rotateY(0deg);
 }
 
-div.movieCard > div:nth-child(2) {
+div.movieBack {
+  /* back */
   /* border: 4px blue groove; */
+  box-sizing: border-box;
   transform: rotateY(180deg);
   overflow: auto;
 }
 
-div.movieCard:hover > div:nth-child(1) {
+div.movieCards:hover > div:nth-child(1) {
   transform: rotateY(180deg);
 }
-div.movieCard:hover > div:nth-child(2) {
+div.movieCards:hover > div:nth-child(2) {
   transform: rotateY(360deg);
 }
 
-div.movieCard > div > img:nth-child(2) {
+/* div.movieCards > div > img:nth-child(2) {
   display: block;
   position: absolute;
   top: 46%;
@@ -90,6 +109,7 @@ div.movieCard > div > img:nth-child(2) {
   max-width: 95%;
   transform: translate(-50%, -50%);
 }
+*/
 
 /* div.movieCard > div > img:nth-child(3) {
   display: block;
@@ -102,8 +122,8 @@ div.movieCard > div > img:nth-child(2) {
 }
 */
 
-.bookingButton {
-  font: bold 14px Arial;
+.bookNow {
+  font: bold 18px Arial;
   text-decoration: none;
   background-color: #eeeeee;
   color: #333333;
@@ -114,4 +134,6 @@ div.movieCard > div > img:nth-child(2) {
   border-left: 1px solid #cccccc;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
+  left: 35%;
 }
