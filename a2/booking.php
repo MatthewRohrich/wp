@@ -9,6 +9,12 @@
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     <script src='../wireframe.js'></script>
+
+    <!-- photos --> 
+    <!-- https://www.imdb.com/name/nm0757855/mediaviewer/rm4148826625?ref_=nmmi_mi_all_sf_7   zoe saldana -->
+    <!-- https://www.imdb.com/name/nm0941777/mediaviewer/rm3947500033?ref_=nmmi_mi_all_sf_14 Sam Worthington -->
+    <!--   James Cameron -->
+    <!-- https://archive.org/download/bliptv-20131031-094703-Bsgcast-AVATARPREVIEWExclusiveScenesAndInterviews149  avatar preview --> 
   </head>
 
   <body>
@@ -39,12 +45,23 @@
       <article id='Lunardo Booking'>
         <section id="details">
           Movie details 
-          <div>Preview</div>
-          <dive>Full Synopsis</div>
-          <div>Starring
-            <div>Star 1</div>
-            <div>Star 2</div>
-            <div>Director</div>
+          <div>
+          <video controls width=600>
+            <source src="../../media/avatar-preview.mp4"  type="video/mp4" >
+          </div>
+          <div><h2>Synopsis</h2>
+          <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
+          </div>
+          <div id="MovieCast"><h2>Starring</h2>
+            <div>Zoe Saldana
+              <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
+            </div>
+            <div>Sam Worthington
+              <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
+            </div>
+            <div>Director - James Cameron
+              <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
+            </div>
           </div>
         </section>
         <section id="booking">
