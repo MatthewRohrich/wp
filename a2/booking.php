@@ -182,7 +182,7 @@
             <p>Name:  <input type=text name="name" value=""></p>
             <p>Email:  <input type=text name="email" value=""></p>
             <p>Mobile:  <input type=text name="mobile" value=""></p>
-            <p><input type='submit' name='submit' value='submit' /></p>
+            <p><input type='submit' name='submit' value='Book' /></p>
           </form>
         </section>
       </article>
