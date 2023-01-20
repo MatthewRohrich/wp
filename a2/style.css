@@ -229,7 +229,7 @@ div.movieCards:hover > div:nth-child(2) {
 
 .button {
   float: left;
-  margin: 0 5px 0 5px;
+  margin: 0px 5px 5px 5px;
   width: 100px;
   height: 40px;
   position: relative;
@@ -298,10 +298,37 @@ td {
   padding: 3px;
 }
 
-@media (min-width: 30em) {
+.castContainer {
+  display: grid;
+  grid-template-areas:
+    "cast-1"
+    "cast-2"
+    "cast-3";
+}
+
+/* .cast {
+  display: flexbox;
+} */
+
+.castContainer:nth-child(1) {
+  grid-area: cast-1;
+}
+.castContainer:nth-child(2) {
+  grid-area: cast-2;
+}
+.castContainer:nth-child(3) {
+  grid-area: cast-3;
+}
+
+@media (min-width: 800px) {
   body {
     margin: 0em 1em 0em 2em;
     padding: 1.3em;
+  }
+
+  .castContainer {
+    display: grid;
+    grid-template-areas: "cast-1 cast-2 cast-3";
   }
 
   .seats-grid {

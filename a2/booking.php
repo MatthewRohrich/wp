@@ -57,15 +57,19 @@
           <div id="synopsis"><h2>Synopsis</h2>
           <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
           </div>
-          <div id="movieCast"><h2>Starring</h2>
-            <div>Zoe Saldana
+          <h2>Starring</h2>
+          <div class="castContainer" id="movieCast">
+            <div class="cast">
               <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
+              <p>Zoe Saldana</p>
             </div>
-            <div>Sam Worthington
+            <div class="cast">
               <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
+              <p>Sam Worthington</p>
             </div>
-            <div>Director - James Cameron
+            <div class="cast">
               <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
+              <p>Director - James Cameron</p>
             </div>
           </div>
         </section>
