@@ -21,38 +21,43 @@
 
     <header>
       <!-- https://pixabay.com/vectors/film-cinema-popcorn-coke-fun-162029/ -->
-      <div><img id='logo' src='../../media/logo-160.png' alt='Film and popcorn'> Lunardo Cinemas</div>
+      <div id="cinemaTitle">
+        <img id='logo' src='../../media/logo-160.png' alt='Film and popcorn'> Lunardo Cinemas</div>
     </header>
 
     <nav>
-      <div>
         <ul>
           <li>
             <a href="./index.php">Home</a>
           </li>
           <li>
-            <a href="#details">Movie details</a>
+            <a href="#details">Movie Preview</a>
+          </li>
+          <li>
+            <a href="#synopsis">Movie Synopsis</a>
+          </li>
+          <li>
+            <a href="#movieCast">Cast</a>
           </li>
           <li>
             <a href="#booking">Booking</a>
           </li>
         </ul>
-      </div>
-      
+     
     </nav>
 
     <main>
       <article id='Lunardo Booking'>
         <section id="details">
-          Movie details 
+          <h2>Movie details</h2>
           <div>
           <video controls width=600>
             <source src="../../media/avatar-preview.mp4"  type="video/mp4" >
           </div>
-          <div><h2>Synopsis</h2>
+          <div id="synopsis"><h2>Synopsis</h2>
           <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
           </div>
-          <div id="MovieCast"><h2>Starring</h2>
+          <div id="movieCast"><h2>Starring</h2>
             <div>Zoe Saldana
               <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
             </div>
@@ -179,10 +184,13 @@
             </div>
             Pick a Session
             <input type=text name="movie" value="ACT" hidden>
-            <p>Name:  <input type=text name="name" value=""></p>
-            <p>Email:  <input type=text name="email" value=""></p>
-            <p>Mobile:  <input type=text name="mobile" value=""></p>
-            <p><input type='submit' name='submit' value='Book' /></p>
+            <p><label for="name">Name: </label>
+            <input type=text id="name" name="name" value="" required></p>
+            <p><label for="email">Email: </label>
+            <input type=email id="email" name="email" value="" required></p>
+            <p><label for="mobile">Mobile Num: </label>
+            <input type=tel id="mobile" name="mobile" pattern="[0-9]{4}[ ]][0-9]{3}[ ][0-9]{3}" placeholder="04nn nnn nnn" value="" required></span></p>
+            <p><input id="submitBooking" type='submit' name='submit' value='Book' /></p>
           </form>
         </section>
       </article>
@@ -190,8 +198,8 @@
     <footer>
       <div class="contactDetails">
         <em>Contact Us:</em>
-        email - <a href="mailto:info@lunardocineamas.com.au" target="_blank" >info@lunardocineamas.com.au</a> 
-        Mobile - <a href="tel:0439 555 5555" target="_blank">Call 0439 555 5555</a>
+        Email - <a href="mailto:info@lunardocineamas.com.au" target="_blank" >info@lunardocineamas.com.au</a> 
+        Mobile - <a href="tel:0439 555 555" target="_blank">Call 0439 555 555</a>
         Address - <a href="https://www.openstreetmap.org/node/4301500443#map=19/-34.06668/150.81231" target="_blank">
           1 Cinema Rd, Movie Town, NSW 2999
         </a>

@@ -5,8 +5,60 @@
 /* Satisfy use for title, Dosis for headings, Roboto for normal text */
 @import url("https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&family=Satisfy&display=swap");
 
+/* Navy-Blue #18121E
+   Gunmetal #233237
+   RustyRed #984B43
+   Warm Yellow #EAC67A
+*/
+:root {
+  /* colours found here https://www.canva.com/learn/website-color-schemes/ */
+  --main-text-colour: #e8e8e8;
+  --Navy-Blue: #18121e;
+  --Gun-Metal: #233237;
+  --Rust-Red: #984b43;
+  --Dust-Pink: #fcecea;
+
+  /* button border colours */
+  --Border-Light: #cccccc;
+  --Border-Dark: #333333;
+}
+
 header {
-  margin-top: 40px;
+  padding-top: 2em;
+}
+
+nav {
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: var(--Navy-Blue);
+  z-index: 2;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  float: left;
+  /* border-color: var(--Rust-Red); */
+  border-right: 1.5em solid var(--Navy-Blue);
+  border-bottom: 1em solid var(--Navy-Blue);
+}
+
+nav a {
+  display: block;
+  padding: 0.5em 1em 0.5em 1em;
+
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  border-radius: 0.3em;
+}
+
+nav a:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
 }
 
 section {
@@ -16,6 +68,23 @@ section {
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
+  color: var(--main-text-colour);
+  background-image: url("../../media/curtain_640.jpg");
+  background-size: cover;
+}
+
+body {
+  margin: 0em 0em 0em 0em;
+  padding: 1.3em;
+  background-color: var(--Navy-Blue);
+  z-index: 0;
+}
+
+@media (min-width: 30em) {
+  body {
+    margin: 0em 1em 0em 2em;
+    padding: 1.3em;
+  }
 }
 
 h1,
@@ -23,27 +92,33 @@ h2,
 h3,
 h4 {
   font-family: "Dosis", sans-serif;
+  font-size: 3vw;
+  color: var(--Rust-Red);
 }
+
 #cinemaTitle {
   font-family: "Satisfy", cursive;
   font-size: 7vw;
+  color: var(--Rust-Red);
 }
 
 #movieContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  max-width: 960px;
+  grid-gap: 5px;
+  /* max-width: 960px; */
+  /* max-width: calc(100% - 3em); */
   margin: 0 auto;
+  z-index: 0;
 }
 
 #movieContainer div {
-  background-color: #3bbced;
+  background-color: var(--Gun-Metal);
   padding: 10px;
 }
 
-#movieContainer div .movieTitle {
-  background-color: #606060;
+.movieTitle {
+  background-color: var(--Gun-Metal);
   writing-mode: vertical-rl;
 }
 
@@ -78,8 +153,8 @@ div.movieCards {
 }
 
 div.movieCards > div {
-  height: calc(100% - 10px);
-  width: calc(100% - 10px);
+  height: calc(100% - 0.8em);
+  width: calc(100% - 0.8em);
   box-sizing: border-box;
   /* padding: 5px 10px; */
   position: absolute;
@@ -145,15 +220,45 @@ div.movieCards:hover > div:nth-child(2) {
 .bookNow {
   font: bold 18px Arial;
   text-decoration: none;
-  background-color: #eeeeee;
-  color: #333333;
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
   padding: 0.4em 0.7em 0.4em 0.7em;
-  border-top: 1px solid #cccccc;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #cccccc;
+  border-top: 1px solid var(--Border-Light);
+  border-right: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border-Dark);
+  border-left: 1px solid var(--Border-Light);
   border-radius: 4px;
   cursor: pointer;
   position: relative;
   left: 35%;
+}
+
+.bookNow:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+}
+
+#submitBooking {
+  font: bold 22px Arial;
+  text-decoration: none;
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  border-top: 1px solid var(--Border-Light);
+  border-right: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border-Dark);
+  border-left: 1px solid var(--Border-Light);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 5em;
+}
+
+#submitBooking:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+  border-top: 1px solid var(--Border-Dark);
+  border-right: 1px solid var(--Border-Light);
+  border-bottom: 1px solid var(--Border-Light);
+  border-left: 1px solid var(--Border-Dark);
 }
