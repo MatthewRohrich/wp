@@ -1,5 +1,10 @@
 /* Insert your styles here */
 /* css information referenced from w3Schools and MDN - Mozilla Developer Network */
+
+/* my original font choices - I gave up trying to get them to work and moved to google fonts instead */
+/* Satisfy use for title, Dosis for headings, Roboto for normal text */
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&family=Satisfy&display=swap");
+
 header {
   margin-top: 40px;
 }
@@ -10,6 +15,18 @@ section {
 
 html {
   scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Dosis", sans-serif;
+}
+#cinemaTitle {
+  font-family: "Satisfy", cursive;
+  font-size: 7vw;
 }
 
 #movieContainer {
