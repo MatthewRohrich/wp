@@ -79,13 +79,6 @@ body {
   z-index: 0;
 }
 
-@media (min-width: 30em) {
-  body {
-    margin: 0em 1em 0em 2em;
-    padding: 1.3em;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -269,4 +262,50 @@ div.movieCards:hover > div:nth-child(2) {
   cursor: pointer;
   z-index: 90;
   line-height: 1.8em;
+}
+
+div.seats img {
+  width: 25%;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.seats-grid:nth-child(1) {
+  grid-area: seats-1;
+}
+.seats-grid:nth-child(2) {
+  grid-area: seats-2;
+}
+.seats-grid:nth-child(3) {
+  grid-area: seats-3;
+}
+.seats-grid:nth-child(4) {
+  grid-area: seats-4;
+}
+.seats-grid:nth-child(5) {
+  grid-area: seats-5;
+}
+
+table,
+th,
+tr,
+td {
+  border: 2px var(--Rust-Red) solid;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+@media (min-width: 30em) {
+  body {
+    margin: 0em 1em 0em 2em;
+    padding: 1.3em;
+  }
+
+  .seats-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-area: "seats-1 seats-1" "seats-2 seats-3" "seats-4 seats-5";
+  }
 }
