@@ -42,7 +42,6 @@ nav ul {
 
 nav li {
   float: left;
-  /* border-color: var(--Rust-Red); */
   border-right: 1.5em solid var(--Navy-Blue);
   border-bottom: 1em solid var(--Navy-Blue);
 }
@@ -111,8 +110,6 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5px;
-  /* max-width: 960px; */
-  /* max-width: calc(100% - 3em); */
   margin: 0 auto;
   z-index: 0;
 }
@@ -141,18 +138,9 @@ div.movie {
 
 /* animated movie cards based on Trevors Lecture Notes */
 div.movieCards {
-  /* border: 5px rgb(255, 0, 251) groove; */
-  background-color: #fff;
-
   box-sizing: border-box;
   height: 40em;
   width: 28em;
-  /* height: 600px; */
-  /* width: 430px;*/
-  /*min-height: 150px;
-  min-width: 114px; */
-  /* padding: 5px; */
-
   overflow: auto;
   position: relative;
 }
@@ -199,28 +187,6 @@ div.movieCards:hover > div:nth-child(1) {
 div.movieCards:hover > div:nth-child(2) {
   transform: rotateY(360deg);
 }
-
-/* div.movieCards > div > img:nth-child(2) {
-  display: block;
-  position: absolute;
-  top: 46%;
-  left: 50%;
-  max-height: 75%;
-  max-width: 95%;
-  transform: translate(-50%, -50%);
-}
-*/
-
-/* div.movieCard > div > img:nth-child(3) {
-  display: block;
-  position: relative;
-  top: 93%;
-  left: 50%;
-  max-height: 15%;
-  max-width: 50%;
-  transform: translate(-50%, -50%);
-}
-*/
 
 .bookNow {
   font: bold 18px Arial;

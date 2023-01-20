@@ -69,8 +69,9 @@
             </div>
           </div>
         </section>
+        <h2>Book Your Movie</h2>
         <section id="booking">
-          <h2>How many seats?</h2>
+          <h3>How many seats?</h3>
           <form action="booking.php" method="post">
             <div class="seats">
               Standard Adult
@@ -141,7 +142,7 @@
               </select>  
             </div>
             <div class="seats">
-              First Class Consession
+              First Class Concession
               <select name='seats[FCP]'>
                 <option value=''>Please Select</option>
                   <option value='01' data-fullprice="28" data-discprice="23.5">1</option>
@@ -174,23 +175,39 @@
                 </optgroup>
               </select>  
             </div>
-            <div class="movieSessions">
-              <input type=radio id='Mon' value="mon" name='session' data-pricing="discprice"/> <label for='Mon'  >Mon 9pm</label>
-              <input type=radio id='Tue' value="tue" name='session' data-pricing="fullprice"/> <label for='Tue'  >Tue 9pm</label>
-              <input type=radio id='Wed' value="wed" name='session' data-pricing="discprice"/> <label for='Wed'  >Wed 9pm</label>
-              <input type=radio id='Fri' value="fri" name='session' data-pricing="fullprice"/> <label for='Fri'  >Fri 9pm</label>
-              <input type=radio id='Sat' value="sat" name='session' data-pricing="fullprice"/> <label for='Sat'  >Sat 6pm</label>
-              <input type=radio id='Sun' value="sun" name='session' data-pricing="fullprice"/> <label for='Sun'  >Sun 6pm</label>
-            </div>
-            Pick a Session
-            <input type=text name="movie" value="ACT" hidden>
-            <p><label for="name">Name: </label>
-            <input type=text id="name" name="name" value="" required></p>
-            <p><label for="email">Email: </label>
-            <input type=email id="email" name="email" value="" required></p>
-            <p><label for="mobile">Mobile Num: </label>
-            <input type=tel id="mobile" name="mobile" pattern="[0-9]{4}[ ]][0-9]{3}[ ][0-9]{3}" placeholder="04nn nnn nnn" value="" required></span></p>
-            <p><input id="submitBooking" type='submit' name='submit' value='Book' /></p>
+            <h3>Pick a Session</h3>
+              <div class="movieSessions">
+                  
+                <div class="button">
+                  <input type=radio id='Mon' value="mon" name='session' data-pricing="discprice"/> <label for='Mon'  >Mon 9pm</label>
+                </div>
+                <div class="button">
+                  <input type=radio id='Tue' value="tue" name='session' data-pricing="fullprice"/> <label for='Tue'  >Tue 9pm</label>
+                </div>
+                <div class="button">
+                  <input type=radio id='Wed' value="wed" name='session' data-pricing="discprice"/> <label for='Wed'  >Wed 9pm</label>
+                </div>
+                <div class="button">
+                  <input type=radio id='Fri' value="fri" name='session' data-pricing="fullprice"/> <label for='Fri'  >Fri 9pm</label>
+                </div>
+                <div class="button">
+                  <input type=radio id='Sat' value="sat" name='session' data-pricing="fullprice"/> <label for='Sat'  >Sat 6pm</label>
+                </div>
+                <div class="button">
+                  <input type=radio id='Sun' value="sun" name='session' data-pricing="fullprice"/> <label for='Sun'  >Sun 6pm</label>
+                </div>
+              </div>
+              <div id="bookingDetails">
+                <h3>Booking Details</h3>
+                <input type=text name="movie" value="ACT" hidden>
+                <p><label for="name">Name: </label>
+                <input type=text id="name" name="name" value="" required></p>
+                <p><label for="email">Email: </label>
+                <input type=email id="email" name="email" value="" required></p>
+                <p><label for="mobile">Mobile Num: </label>
+                <input type=tel id="mobile" name="mobile" pattern="[0-9]{4}[ ]][0-9]{3}[ ][0-9]{3}" placeholder="04nn nnn nnn" value="" required></span></p>
+                <p><input id="submitBooking" type='submit' name='submit' value='Book' /></p>
+              </div>
           </form>
         </section>
       </article>
