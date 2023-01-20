@@ -101,10 +101,24 @@ h4 {
 
 #movieContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-area: "movie-1" "movie-2" "movie-3" "movie-4";
   grid-gap: 5px;
   margin: 0 auto;
   z-index: 0;
+}
+
+#movieContainer:nth-child(1) {
+  grid-area: movie-1;
+}
+#movieContainer:nth-child(2) {
+  grid-area: movie-2;
+}
+#movieContainer:nth-child(3) {
+  grid-area: movie-3;
+}
+#movieContainer:nth-child(4) {
+  grid-area: movie-4;
 }
 
 #movieContainer div {
@@ -114,12 +128,20 @@ h4 {
 
 .movieTitle {
   background-color: var(--Gun-Metal);
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
 }
 
 div.movie {
   display: grid;
-  grid-template-columns: 1fr 0.2fr;
+  /* grid-template-columns: 1fr 0.2fr; */
+  grid-template-areas: "mTitle" "mCard";
+}
+
+div.movieCards {
+  grid-area: mCard;
+}
+div.movieTitle {
+  grid-area: mTitle;
 }
 
 /*
@@ -154,6 +176,8 @@ div.movieTitle {
   box-sizing: border-box;
   position: relative;
   top: 20px;
+  color: var(--Rust-Red);
+  font-size: 2em;
 }
 
 div.movieFront > img {
@@ -172,6 +196,8 @@ div.movieBack {
   box-sizing: border-box;
   transform: rotateY(180deg);
   overflow: auto;
+  color: var(--Rust-Red);
+  font-size: 1.3em;
 }
 
 div.movieCards:hover > div:nth-child(1) {
@@ -334,5 +360,26 @@ td {
   .seats-grid {
     grid-template-columns: 1fr 1fr;
     grid-area: "seats-1 seats-1" "seats-2 seats-3" "seats-4 seats-5";
+  }
+
+  #movieContainer {
+    grid-area: "movie-1 movie-2" "movie-3 movie-4";
+  }
+
+  .movieTitle {
+    writing-mode: vertical-rl;
+  }
+
+  div.movie {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    grid-template-areas: "mCard mTitle";
+  }
+}
+
+@media (min-width: 1200px) {
+  #movieContainer {
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-area: "movie-1" "movie-2" "movie-3" "movie-4"; */
   }
 }
