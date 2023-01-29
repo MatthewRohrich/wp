@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CE06 Plays On Monday</title>
+    <script> 
+      function playsOnMonday(day, time) {
+        switch (day) {
+          case "MON":
+            switch (time) {
+              case "12pm":
+              case "6pm":
+              case "9pm":
+                return "Is playing";
+                break;
+              default:
+                return "Is not playing";
+            }
+            break;
+          default: 
+            return "Not a Monday";
+        }
+      }
+      
+      function fullDiscountedOrNotShowing(day, time) {
+        switch (day) {
+          case "MON":
+            switch (time) {
+              case "12pm":
+              case "6pm":
+              case "9pm":
+                return "discount";
+                break;
+              default:
+                return "Not Showing";
+                break;
+            }          
+          default: 
+            switch (time) {
+              case "12pm":
+                return "discount";
+                break;
+              case "3pm":
+              case "6pm":
+              case "9pm": 
+              case "11pm": 
+                return "full";
+                break;
+              default: 
+                return "Not Showing"
+            }
+            
+        }
+      }
+
+      // Task 2
+
+      var pricingPolicy = {
+        "MON": {"12pm": "discount" , "6pm": "discount", "9pm": "discount" },
+        "TUE": {"12pm": "discount" , "6pm": "full", "9pm": "full" },
+        "WED": {"12pm": "discount" , "6pm": "full", "9pm": "full" },
+        "THU": {"12pm": "discount" , "6pm": "full", "9pm": "full" },
+        "FRI": {"12pm": "discount" , "6pm": "full", "9pm": "full" },
+
+      }; 
+ 
+      // task 2
+      function fullDiscountedOrNotShowing(day, time){
+        if (!pricingPolicy[day] || !pricingPolicy[day][time] ){
+        //console.log(day + " " + time);
+          return "not showing";
+        }
+        //console.log(day + " " + time);
+        return pricingPolicy[day][time];
+      }
+
+
+
+      // Testing Code, do not modify
+      var days = ["MON","TUE","WED","THU","FRI","SAT","SUN","FUN"];
+      var times = ["12pm","3pm","6pm","9pm","11pm"];
+      document.write("<table border=1>");
+      for (d in days) {
+        document.write("<tr>");
+        for (t in times) {
+          document.write(`<td>${days[d]} @ ${times[t]}<br>${fullDiscountedOrNotShowing2(days[d],times[t])}</td>`);
+        }
+       document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </head>
+  <body>
+    <h1>CE06 Plays On Monday</h1>
+  </body>
+</html>
