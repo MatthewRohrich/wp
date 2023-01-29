@@ -1,0 +1,385 @@
+/* Insert your styles here */
+/* css information referenced from w3Schools and MDN - Mozilla Developer Network */
+
+/* my original font choices - I gave up trying to get them to work and moved to google fonts instead */
+/* Satisfy use for title, Dosis for headings, Roboto for normal text */
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&family=Satisfy&display=swap");
+
+/* Navy-Blue #18121E
+   Gunmetal #233237
+   RustyRed #984B43
+   Warm Yellow #EAC67A
+*/
+:root {
+  /* colours found here https://www.canva.com/learn/website-color-schemes/ */
+  --main-text-colour: #e8e8e8;
+  --Navy-Blue: #18121e;
+  --Gun-Metal: #233237;
+  --Rust-Red: #984b43;
+  --Dust-Pink: #fcecea;
+
+  /* button border colours */
+  --Border-Light: #cccccc;
+  --Border-Dark: #333333;
+}
+
+header {
+  padding-top: 2em;
+}
+
+nav {
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: var(--Navy-Blue);
+  z-index: 2;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  float: left;
+  border-right: 1.5em solid var(--Navy-Blue);
+  border-bottom: 1em solid var(--Navy-Blue);
+}
+
+nav a {
+  display: block;
+  padding: 0.5em 1em 0.5em 1em;
+
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  border-radius: 0.3em;
+}
+
+nav a:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+}
+
+section {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  color: var(--main-text-colour);
+  background-image: url("../../media/curtain_640.jpg");
+  background-size: cover;
+}
+
+body {
+  margin: 0em 0em 0em 0em;
+  padding: 1.3em;
+  background-color: var(--Navy-Blue);
+  z-index: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Dosis", sans-serif;
+  font-size: 3vw;
+  color: var(--Rust-Red);
+}
+
+h3,
+h4 {
+  font-size: 1.5vw;
+}
+
+#cinemaTitle {
+  font-family: "Satisfy", cursive;
+  font-size: 7vw;
+  color: var(--Rust-Red);
+}
+
+#movieContainer {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-area: "movie-1" "movie-2" "movie-3" "movie-4";
+  grid-gap: 5px;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+#movieContainer:nth-child(1) {
+  grid-area: movie-1;
+}
+#movieContainer:nth-child(2) {
+  grid-area: movie-2;
+}
+#movieContainer:nth-child(3) {
+  grid-area: movie-3;
+}
+#movieContainer:nth-child(4) {
+  grid-area: movie-4;
+}
+
+#movieContainer div {
+  background-color: var(--Gun-Metal);
+  padding: 10px;
+}
+
+.movieTitle {
+  background-color: var(--Gun-Metal);
+  /* writing-mode: vertical-rl; */
+}
+
+div.movie {
+  display: grid;
+  /* grid-template-columns: 1fr 0.2fr; */
+  grid-template-areas: "mTitle" "mCard";
+}
+
+div.movieCards {
+  grid-area: mCard;
+}
+div.movieTitle {
+  grid-area: mTitle;
+}
+
+/*
+#movieContainer div .movieCards {
+  border: 2px red groove;
+  background-color: aquamarine;
+  padding: 10px;
+} */
+
+/* animated movie cards based on Trevors Lecture Notes */
+div.movieCards {
+  box-sizing: border-box;
+  height: 40em;
+  width: 28em;
+  overflow: auto;
+  position: relative;
+}
+
+div.movieCards > div {
+  height: calc(100% - 0.8em);
+  width: calc(100% - 0.8em);
+  box-sizing: border-box;
+  /* padding: 5px 10px; */
+  position: absolute;
+  transition: 4s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+div.movieTitle {
+  height: calc(100% - 30px);
+  box-sizing: border-box;
+  position: relative;
+  top: 20px;
+  color: var(--Rust-Red);
+  font-size: 2em;
+}
+
+div.movieFront > img {
+  /* front image */
+
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+  /* border: 4px red groove; */
+  transform: rotateY(0deg);
+}
+
+div.movieBack {
+  /* back */
+  /* border: 4px blue groove; */
+  box-sizing: border-box;
+  transform: rotateY(180deg);
+  overflow: auto;
+  color: var(--Rust-Red);
+  font-size: 1.3em;
+}
+
+div.movieCards:hover > div:nth-child(1) {
+  transform: rotateY(180deg);
+}
+div.movieCards:hover > div:nth-child(2) {
+  transform: rotateY(360deg);
+}
+
+.bookNow {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  border-top: 1px solid var(--Border-Light);
+  border-right: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border-Dark);
+  border-left: 1px solid var(--Border-Light);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 35%;
+}
+
+.bookNow:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+}
+
+#submitBooking {
+  font: bold 22px Arial;
+  text-decoration: none;
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  border-top: 1px solid var(--Border-Light);
+  border-right: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border-Dark);
+  border-left: 1px solid var(--Border-Light);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 5em;
+}
+
+#submitBooking:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+  border-top: 1px solid var(--Border-Dark);
+  border-right: 1px solid var(--Border-Light);
+  border-bottom: 1px solid var(--Border-Light);
+  border-left: 1px solid var(--Border-Dark);
+}
+
+.button {
+  float: left;
+  margin: 0px 5px 5px 5px;
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+
+.button label,
+.button input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.button input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.button input[type="radio"]:checked + label {
+  background: var(--Dust-Pink);
+  border-radius: 4px;
+  color: var(--Gun-Metal);
+}
+
+.button label {
+  background-color: var(--Rust-Red);
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 90;
+  line-height: 1.8em;
+}
+
+div.seats img {
+  width: 25%;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.seats-grid:nth-child(1) {
+  grid-area: seats-1;
+}
+.seats-grid:nth-child(2) {
+  grid-area: seats-2;
+}
+.seats-grid:nth-child(3) {
+  grid-area: seats-3;
+}
+.seats-grid:nth-child(4) {
+  grid-area: seats-4;
+}
+.seats-grid:nth-child(5) {
+  grid-area: seats-5;
+}
+
+table,
+th,
+tr,
+td {
+  border: 2px var(--Rust-Red) solid;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+.castContainer {
+  display: grid;
+  grid-template-areas:
+    "cast-1"
+    "cast-2"
+    "cast-3";
+}
+
+/* .cast {
+  display: flexbox;
+} */
+
+.castContainer:nth-child(1) {
+  grid-area: cast-1;
+}
+.castContainer:nth-child(2) {
+  grid-area: cast-2;
+}
+.castContainer:nth-child(3) {
+  grid-area: cast-3;
+}
+
+@media (min-width: 800px) {
+  body {
+    margin: 0em 1em 0em 2em;
+    padding: 1.3em;
+  }
+
+  .castContainer {
+    display: grid;
+    grid-template-areas: "cast-1 cast-2 cast-3";
+  }
+
+  .seats-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-area: "seats-1 seats-1" "seats-2 seats-3" "seats-4 seats-5";
+  }
+
+  #movieContainer {
+    grid-area: "movie-1 movie-2" "movie-3 movie-4";
+  }
+
+  .movieTitle {
+    writing-mode: vertical-rl;
+  }
+
+  div.movie {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    grid-template-areas: "mCard mTitle";
+  }
+}
+
+@media (min-width: 1200px) {
+  #movieContainer {
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-area: "movie-1" "movie-2" "movie-3" "movie-4"; */
+  }
+}
