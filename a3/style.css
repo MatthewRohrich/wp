@@ -60,7 +60,7 @@ nav a:hover {
   color: var(--Gun-Metal);
 }
 
-section {
+article {
   min-height: 100vh;
 }
 
@@ -166,7 +166,7 @@ div.movieCards > div {
   box-sizing: border-box;
   /* padding: 5px 10px; */
   position: absolute;
-  transition: 4s;
+  transition: 1.8s;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
