@@ -294,24 +294,24 @@ div.seats img {
   width: 25%;
 }
 
-.seats-grid {
+#seats {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.seats-grid:nth-child(1) {
+#seats:nth-child(1) {
   grid-area: seats-1;
 }
-.seats-grid:nth-child(2) {
+#seats:nth-child(2) {
   grid-area: seats-2;
 }
-.seats-grid:nth-child(3) {
+#seats:nth-child(3) {
   grid-area: seats-3;
 }
-.seats-grid:nth-child(4) {
+#seats:nth-child(4) {
   grid-area: seats-4;
 }
-.seats-grid:nth-child(5) {
+#seats:nth-child(5) {
   grid-area: seats-5;
 }
 
@@ -357,7 +357,7 @@ td {
     grid-template-areas: "cast-1 cast-2 cast-3";
   }
 
-  .seats-grid {
+  #seats {
     grid-template-columns: 1fr 1fr;
     grid-area: "seats-1 seats-1" "seats-2 seats-3" "seats-4 seats-5";
   }
