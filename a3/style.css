@@ -60,6 +60,11 @@ nav a:hover {
   color: var(--Gun-Metal);
 }
 
+nav a.current {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+}
+
 article {
   min-height: 100vh;
 }
@@ -167,8 +172,8 @@ div.movieCards > div {
   /* padding: 5px 10px; */
   position: absolute;
   transition: 1.8s;
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 div.movieTitle {
