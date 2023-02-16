@@ -209,8 +209,9 @@
                 <input type=radio id='Sun' value="sun" name='session' data-pricing="fullprice"/> <label for='Sun'  >Sun 6pm</label>
               </div>
             </div>
+            
+            <h3>Booking Details</h3>
             <div id="bookingDetails">
-              <h3>Booking Details</h3>
               <input type=text name="movie" value="ACT" hidden>
               <p><label for="name">Name: </label>
               <input type=text id="name" name="name" value="" required></p>
