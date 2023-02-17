@@ -1,13 +1,14 @@
 <?php
 
 /* Call this function in the booking page like so:
-   $postErrors = validateBooking();
-   If the array is empty, then no errors were generated
+$postErrors = validateBooking();
+If the array is empty, then no errors were generated
 */
-function validateBooking() {
+function validateBooking()
+{
   $errors = []; // new empty array to return multiple error messages
   $username = trim($_POST['user']['name']);
-  if ( $username == '') {
+  if ($username == '') {
     $errors['user']['name'] = "Name can't be blank";
   } else {
     // more advanced name checks here with better error message

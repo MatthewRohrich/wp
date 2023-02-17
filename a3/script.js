@@ -13,9 +13,6 @@ window.onscroll = function () {
     .getElementsByTagName("article");
 
   console.log(articles);
-  // console.log(articles[0].offsetTop + '.' + (articles[0].offsetTop + articles[0].offsetHeight) );
-  // console.log(articles[1].offsetTop + '.' + (articles[0].offsetTop + articles[0].offsetHeight) );
-  // console.log(articles[2].offsetTop + '.' + (articles[0].offsetTop + articles[0].offsetHeight) );
 
   for (var a = 0; a < articles.length; a++) {
     var articleTop = articles[a].offsetTop;
