@@ -1,7 +1,7 @@
 <?php
-session_start();
-include './head.php'
-  ?>
+include './tools.php';
+include './head.php';
+?>
 
 <nav>
   <ul>

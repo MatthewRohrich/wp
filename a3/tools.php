@@ -4,7 +4,7 @@ session_start();
 
 // movies associative array
 $movies = [
-  'Avatar' => [
+  'ACT' => [
     'movie-name' => 'Avatar: The Way of Water',
     'rating' => '( M )',
     'synopsis' => 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora.
@@ -40,7 +40,7 @@ $movies = [
     'poster-alt' => 'Avatar: The Way of Water, movie poster',
     'trailer' => '../../media/avatar-preview.mp4'
   ],
-  'Weird' => [
+  'RMC' => [
     'movie-name' => 'Weird: The Al Yankovic Story',
     'rating' => '( M )',
     'synopsis' => 'Explores every facet of Yankovic\'s life, from his meteoric rise to fame with early hits like \'Eat It\'
@@ -73,7 +73,7 @@ $movies = [
     'poster-alt' => 'Weird: The Al Yankovic Story, movie poster',
     'trailer' => '../../media/avatar-preview.mp4'
   ],
-  'Puss in Boots' => [
+  'FAM' => [
     'movie-name' => 'Puss in Boots: The Last Wish',
     'rating' => '( PG )',
     'synopsis' => 'Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight
@@ -105,7 +105,7 @@ $movies = [
     'poster-alt' => 'Puss in Boots: The Last Wish, movie poster',
     'trailer' => '../../media/avatar-preview.mp4'
   ],
-  'Margrete' => [
+  'AHF' => [
     'movie-name' => 'Margrete: Queen of the North',
     'rating' => '( M )',
     'synopsis' => '1402. Queen Margrete is ruling Sweden, Norway and Denmark through her adopted son, Erik. But a
