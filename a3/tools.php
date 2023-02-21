@@ -208,28 +208,26 @@ function showOneMovie($movieCode)
   </article>
   DISPLAYSYNOPSIS;
 
-  
+  /*
   <article id="movieCast">
-    <h2>Starring</h2>
-    <div class="castContainer">
-      <div class="cast">
-        <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
-        <p>Zoe Saldana</p>
-      </div>
-      <div class="cast">
-        <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
-        <p>Sam Worthington</p>
-      </div>
-      <div class="cast">
-        <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
-        <p>Director - James Cameron</p>
-      </div>
-    </div>
+  <h2>Starring</h2>
+  <div class="castContainer">
+  <div class="cast">
+  <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
+  <p>Zoe Saldana</p>
+  </div>
+  <div class="cast">
+  <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
+  <p>Sam Worthington</p>
+  </div>
+  <div class="cast">
+  <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
+  <p>Director - James Cameron</p>
+  </div>
+  </div>
   </article>
-
-
-
   DISPLAYMOVIE;
+  */
 }
 
 
