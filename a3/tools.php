@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+/* Put your PHP functions and modules here.
+Many will be provided in the teaching materials,
+keep a look out for them!
+*/
 
 // movies associative array
 $movies = [
@@ -139,9 +143,94 @@ $movies = [
 
 
 
-/* Put your PHP functions and modules here.
-Many will be provided in the teaching materials,
-keep a look out for them!
-*/
+
+function showAllMovies()
+{
+
+  global $movies; //why php why?
+
+  foreach ($movies as $key => $movie) {
+    echo <<<"OPENMOVIE"
+        <div class="movie">
+          <div class="movieCards">
+            <div class="movieFront">
+              <img src="{$movie['poster']}" alt="{$movie['poster-alt']}">
+            </div>
+            <div class="movieBack">
+              <p>
+                {$movie['synopsis']}
+              </p>
+              <ul>
+    OPENMOVIE;
+
+    foreach ($movie['sessions'] as $day => $time) {
+      echo <<<"SESSIONS"
+             <li>
+                    {$day} - {$time}
+             </li>
+      SESSIONS;
+    }
+
+    echo <<<"CLOSEMOVIE"
+              </ul>
+              <a class="bookNow" href="booking.php?movie='{$key}'">Book Now</a>
+            </div>
+          </div>
+          <div class="movieTitle">
+            <p>{$movie['movie-name']}</p>
+            <p>{$movie['rating']}</p>
+          </div>
+        </div>
+    CLOSEMOVIE;
+  }
+}
+
+function showOneMovie($movieCode)
+{
+  global $movies;
+  echo <<<"DISPLAYTRAILER"
+    <h1>The movie is {$movies[$movieCode]['movie-name']}</h1>
+    <article id='preview'>
+    <h2>Movie preview</h2>
+    <div>
+      <video controls width=600>
+        <source src="{$movies[$movieCode]['trailer']}" type="video/mp4">
+    </div>
+  </article>
+  DISPLAYTRAILER;
+
+  echo <<<"DISPLAYSYNOPSIS"
+  <article id='synopsis'>
+    <h2>Synopsis</h2>
+    <p>
+      {$movies[$movieCode]['synopsis']}
+    </p>
+  </article>
+  DISPLAYSYNOPSIS;
+
+  
+  <article id="movieCast">
+    <h2>Starring</h2>
+    <div class="castContainer">
+      <div class="cast">
+        <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
+        <p>Zoe Saldana</p>
+      </div>
+      <div class="cast">
+        <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
+        <p>Sam Worthington</p>
+      </div>
+      <div class="cast">
+        <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
+        <p>Director - James Cameron</p>
+      </div>
+    </div>
+  </article>
+
+
+
+  DISPLAYMOVIE;
+}
+
 
 ?>

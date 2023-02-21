@@ -25,8 +25,10 @@ include './head.php';
 </nav>
 
 <main>
+  <?php showOneMovie('AHF') ?>
   <article id='preview'>
     <h2>Movie preview</h2>
+
     <div>
       <video controls width=600>
         <source src="../../media/avatar-preview.mp4" type="video/mp4">
