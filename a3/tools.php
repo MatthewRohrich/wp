@@ -94,15 +94,18 @@ $movies = [
     'cast' => [
       [
         'name' => 'Antonio Banderas',
-        'image' => '../../media/AntonioBanderas-242.png'
+        'image' => '../../media/AntonioBanderas-242.png',
+        'alt' => 'Antonio Banderas Portrait'
       ],
       [
         'name' => 'Salma Hayek',
-        'image' => '../../media/SalmaHayek-242.png'
+        'image' => '../../media/SalmaHayek-242.png',
+        'alt' => 'Salma Hayek Portrait'
       ],
       [
         'name' => 'Florence Pugh',
-        'image' => '../../media/FlorencePugh-242.png'
+        'image' => '../../media/FlorencePugh-242.png',
+        'alt' => 'Florence Pugh Portrait'
       ]
     ],
     'poster' => '../../media/puss_in_boots_poster_400.png',
@@ -124,15 +127,18 @@ $movies = [
     'cast' => [
       [
         'name' => 'Trine Dyrholm',
-        'image' => '../../media/TrineDyrholm-242.png'
+        'image' => '../../media/TrineDyrholm-242.png',
+        'alt' => 'Trine Dyrholm portrait'
       ],
       [
         'name' => 'Søren Malling',
-        'image' => '../../media/SørenMalling-242.png'
+        'image' => '../../media/SørenMalling-242.png',
+        'alt' => 'Søren Malling portrait'
       ],
       [
         'name' => 'Morten Hee Andersen',
-        'image' => '../../media/MortenHeeAndersen-242.png'
+        'image' => '../../media/MortenHeeAndersen-242.png',
+        'alt' => 'Morten Hee Andersen portrait'
       ]
     ],
     'poster' => '../../media/margrete_queen_poster_400.png',
@@ -173,7 +179,7 @@ function showAllMovies()
 
     echo <<<"CLOSEMOVIE"
               </ul>
-              <a class="bookNow" href="booking.php?movie='{$key}'">Book Now</a>
+              <a class="bookNow" href="booking.php?movie={$key}">Book Now</a>
             </div>
           </div>
           <div class="movieTitle">
@@ -187,6 +193,8 @@ function showAllMovies()
 
 function showOneMovie($movieCode)
 {
+  //print_r("my movie code " . $movieCode);
+  //die();
   global $movies;
   echo <<<"DISPLAYTRAILER"
     <h1>The movie is {$movies[$movieCode]['movie-name']}</h1>
@@ -208,27 +216,24 @@ function showOneMovie($movieCode)
   </article>
   DISPLAYSYNOPSIS;
 
-  /*
-  <article id="movieCast">
-  <h2>Starring</h2>
-  <div class="castContainer">
-  <div class="cast">
-  <img src="../../media/ZoeSaldana-242.png" alt="Zoe Saldana in Avatar makeup">
-  <p>Zoe Saldana</p>
-  </div>
-  <div class="cast">
-  <img src="../../media/SamWorthington-242.png" alt="Sam Worthington in Avatar makeup">
-  <p>Sam Worthington</p>
-  </div>
-  <div class="cast">
-  <img src="../../media/JamesCameron-242.png" alt="James Cameron gesturing forwards">
-  <p>Director - James Cameron</p>
-  </div>
-  </div>
-  </article>
-  DISPLAYMOVIE;
-  */
-}
+  echo <<<"SYNOPSISHEAD"
+    <article id="movieCast">
+    <h2>Starring</h2>
+    <div class="castContainer">
+    SYNOPSISHEAD;
 
+  foreach ($movies[$movieCode]['cast'] as $star) {
+    echo "<div class=\"cast\">";
+    echo "<img src=\"{$star['image']}\" alt=\"{$star['alt']}\">";
+    echo "<p>{$star['name']}</p>";
+    echo "</div>";
+  }
+
+  echo <<<"SYNOPSISFOOT"
+    </div>
+    </article>
+    SYNOPSISFOOT;
+
+}
 
 ?>
