@@ -295,8 +295,9 @@ div.movieCards:hover > div:nth-child(2) {
   line-height: 1.8em;
 }
 
-div.seats img {
-  width: 25%;
+div.seats-image img {
+  /*width: 25%; */
+  width: 15em;
 }
 
 #seats {

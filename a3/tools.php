@@ -147,40 +147,109 @@ $movies = [
   ]
 ];
 
+// maybe this is too complicated
+$seatsTest = [
+  'Standard' => [
+    'STA' => [
+      'Type' => 'Adult',
+      'Discount' => 16.00,
+      'Normal' => 21.50
+    ],
+    'STP' => [
+      'Type' => 'Concession',
+      'Discount' => 14.50,
+      'Normal' => 19.00
+    ],
+    'STC' => [
+      'Type' => 'Child',
+      'Discount' => 13.00,
+      'Normal' => 17.50
+    ]
+  ],
+  'First Class' => [
+    'FCA' => [
+      'Type' => 'Adult',
+      'Discount' => 25.00,
+      'Normal' => 31.00
+    ],
+    'FCP' => [
+      'Type' => 'Concession',
+      'Discount' => 23.50,
+      'Normal' => 28.00
+    ],
+    'FCC' => [
+      'Type' => 'Child',
+      'Discount' => 22.00,
+      'Normal' => 25.00
+    ]
+  ]
+];
 
+//define the seats
 $seats = [
   'STA' => [
     'Type' => 'Standard Adult',
-    'Discount' => 16.00,
-    'Normal' => 21.50
+    'Discount' => '16.00',
+    'Normal' => '21.50'
   ],
   'STP' => [
     'Type' => 'Standard Concession',
-    'Discount' => 14.50,
-    'Normal' => 19.00
+    'Discount' => '14.50',
+    'Normal' => '19.00'
   ],
   'STC' => [
     'Type' => 'Standard Child',
-    'Discount' => 13.00,
-    'Normal' => 17.50
+    'Discount' => '13.00',
+    'Normal' => '17.50'
   ],
   'FCA' => [
     'Type' => 'First Class Adult',
-    'Discount' => 25.00,
-    'Normal' => 31.00
+    'Discount' => '25.00',
+    'Normal' => '31.00'
   ],
   'FCP' => [
     'Type' => 'First Class Concession',
-    'Discount' => 23.50,
-    'Normal' => 28.00
+    'Discount' => '23.50',
+    'Normal' => '28.00'
   ],
   'FCC' => [
     'Type' => 'First Class Child',
-    'Discount' => 22.00,
-    'Normal' => 25.00
-  ],
-
+    'Discount' => '22.00',
+    'Normal' => '25.00'
+  ]
 ];
+
+function showSeatPricing()
+{
+  global $seats;
+  echo <<<"OPENSEATS"
+  <div class="seats">
+    <table>
+      <thead>
+        <tr>
+          <th>Seat Type</th>
+          <th>Discount Prices</th>
+          <th>Normal Price</th>
+        </tr>
+      </thead>
+  OPENSEATS;
+
+  foreach ($seats as $seat) {
+    echo <<<"SEATS"
+        <tr>
+          <td>{$seat['Type']}</td>
+          <td>{$seat['Discount']}</td>
+          <td>{$seat['Normal']}</td>
+        </tr>
+
+    SEATS;
+  }
+  echo <<<"CLOSESEATS"
+      </table>
+    </div>
+  CLOSESEATS;
+}
+
 
 function showAllMovies()
 {
