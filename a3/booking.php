@@ -26,13 +26,34 @@ include './head.php';
 
 <main>
 
-  <?php showOneMovie($_GET['movie']) ?>
+  <?php
+  $movieCode = $_GET['movie'];
+  showOneMovie($movieCode);
+  ?>
 
 
   <article id="booking">
     <h2>Book Your Movie</h2>
     <h3>How many seats?</h3>
     <form action="booking.php" method="post">
+      <input type=text name="movie" value="<?= $movieCode ?>" hidden>
+      <?php
+      foreach ($seats as $key => $seat) {
+        echo '<div class="seats">';
+        echo "{$seats[$key]['Type']}";
+        // echo "my keys: {$key}";
+        echo "<select name='seats[{$key}]'>";
+        echo "<option value=''>Please Select</option>";
+        echo "<option value=\"01\" data-fullprice=\"{$seats[$key]['Normal']}\" data-discprice=\"{$seats[$key]['Discount']}\">1</option>";
+
+        echo "</select>";
+        echo "</div>";
+      }
+      ?>
+      <br>
+      <br>
+      <br>
+      <br>
       <div class="seats">
         Standard Adult
         <select name='seats[STA]'>
@@ -47,7 +68,6 @@ include './head.php';
           <option value='08' data-fullprice="172" data-discprice="128">8</option>
           <option value='09' data-fullprice="193.5" data-discprice="144">9</option>
           <option value='10' data-fullprice="215" data-discprice="160">10</option>
-          </optgroup>
         </select>
       </div>
       <div class="seats">
@@ -166,7 +186,7 @@ include './head.php';
 
       <h3>Booking Details</h3>
       <div id="bookingDetails">
-        <input type=text name="movie" value="ACT" hidden>
+
         <p><label for="name">Name: </label>
           <input type=text id="name" name="name" value="" required>
         </p>
