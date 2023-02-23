@@ -219,6 +219,54 @@ $seats = [
   ]
 ];
 
+function validateMovieCode($movieCode)
+{
+  // does the movie code exist if not someone has made a mistake
+  // or is faking the movie code
+  global $movies;
+  if (!array_key_exists($movieCode, $movies)) {
+    header('Location: index.php');
+  }
+}
+
+//display seat selection options for the bookings
+function seatSelection()
+{
+  global $seats;
+  foreach ($seats as $key => $seat) {
+    echo '<div class="seats">';
+    echo "{$seats[$key]['Type']}";
+    echo "<select name='seats[{$key}]'>";
+    echo "<option value=''>Please Select</option>";
+    for ($i = 1; $i <= 10; $i++) {
+      $fullPrice = $seats[$key]['Normal'] * $i;
+      $discountPrice = $seats[$key]['Discount'] * $i;
+      echo "<option value=\"{$i}\" data-fullprice=\"{$fullPrice}\" data-discprice=\"{$discountPrice}\">{$i}</option>";
+    }
+    echo "</select>";
+    echo "</div>";
+  }
+}
+
+
+
+//display the buttons showing the sessions that this movie
+// has
+function displayMovieSessions($code)
+{
+  global $movies;
+
+  foreach ($movies[$code]['sessions'] as $sessKey => $sessTime) {
+    echo <<<"DISPLAYSESSIONS"
+      <div class="button">
+        <input type=radio id='{$sessKey}' value="{$sessKey}" name='session' data-pricing="discprice" /> 
+        <label for='{$sessKey}'>{$sessKey} - {$sessTime}</label>
+      </div>
+    DISPLAYSESSIONS;
+
+  }
+}
+
 function showSeatPricing()
 {
   global $seats;
