@@ -147,43 +147,6 @@ $movies = [
   ]
 ];
 
-// maybe this is too complicated
-$seatsTest = [
-  'Standard' => [
-    'STA' => [
-      'Type' => 'Adult',
-      'Discount' => 16.00,
-      'Normal' => 21.50
-    ],
-    'STP' => [
-      'Type' => 'Concession',
-      'Discount' => 14.50,
-      'Normal' => 19.00
-    ],
-    'STC' => [
-      'Type' => 'Child',
-      'Discount' => 13.00,
-      'Normal' => 17.50
-    ]
-  ],
-  'First Class' => [
-    'FCA' => [
-      'Type' => 'Adult',
-      'Discount' => 25.00,
-      'Normal' => 31.00
-    ],
-    'FCP' => [
-      'Type' => 'Concession',
-      'Discount' => 23.50,
-      'Normal' => 28.00
-    ],
-    'FCC' => [
-      'Type' => 'Child',
-      'Discount' => 22.00,
-      'Normal' => 25.00
-    ]
-  ]
-];
 
 //define the seats
 $seats = [
@@ -257,15 +220,22 @@ function displayMovieSessions($code)
   global $movies;
 
   foreach ($movies[$code]['sessions'] as $sessKey => $sessTime) {
+    $dataPricing = 'fullprice';
+    if (($sessKey == 'Mon') or ($sessTime == "12pm")) {
+      $dataPricing = 'discountprice';
+    }
     echo <<<"DISPLAYSESSIONS"
       <div class="button">
-        <input type=radio id='{$sessKey}' value="{$sessKey}" name='session' data-pricing="discprice" /> 
+        <input type=radio id='{$sessKey}' value="{$sessKey}" name='session' data-pricing="{$dataPricing}" /> 
         <label for='{$sessKey}'>{$sessKey} - {$sessTime}</label>
       </div>
     DISPLAYSESSIONS;
 
   }
 }
+
+
+
 
 function showSeatPricing()
 {
@@ -346,7 +316,7 @@ function showOneMovie($movieCode)
   //die();
   global $movies;
   echo <<<"DISPLAYTRAILER"
-    <h1>The movie is {$movies[$movieCode]['movie-name']}</h1>
+    <h1>{$movies[$movieCode]['movie-name']}</h1>
     <article id='preview'>
     <h2>Movie preview</h2>
     <div>
