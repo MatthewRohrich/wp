@@ -116,8 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script type="text/javascript">
   // this script has to go after the page is rendered or it will not work.
 
-  movieSession = null;  // object store the selected movieSession and the pricelevel
-  priceLevel = null; // is this movie discounted?
+  var movieSession = new Object;  // object store the selected movieSession and the pricelevel
+  var priceLevel = null; // is this movie discounted?
 
   // add an eventlistener to the movie radio buttons to trigger when clicked
   const sessionButtons = document.querySelectorAll('input[name="session"]');
@@ -139,36 +139,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
       if (radioButtons[i].checked)
       {
-        $booking[]
-        console.log("SessionDay: " + radioButtons[i].id);
-        console.log("SelectedTime: " + radioButtons[i].value);
-        console.log("priceLevel: " + radioButtons[i].getAttribute('data-pricing'));
 
-        var movieSession = new Object();
-        // Save the selected radio button and its value and pricing data
-        movieSession.id = radioButtons[i].id;
-        movieSession.value = radioButtons[i].value;
-        movieSession.priceLevel = radioButtons[i].getAttribute('data-pricing');
+        //console.log("SessionDay: " + radioButtons[i].id);
+        //console.log("SelectedTime: " + radioButtons[i].value);
+        //console.log("priceLevel: " + radioButtons[i].getAttribute('data-pricing'));
+        //var movieSession = new Object();
+
+        movieSession.day = radioButtons[i].id;  // day of the sessionButtons
+        movieSession.time = radioButtons[i].value; // time of the movie
+        //set the price level
+        priceLevel = radioButtons[i].getAttribute('data-pricing');
         break;
       }
     }
   }
 
 
-  bookingData = null; //object to store the booking data
+  seatData = null; //object to store the booking data
   // setup the events for the dropdown boxes
   //loop through all the  dropdowns
-  const booking = document.getElementById("seatsSTA");  // for some reason query selector doesn't return the right data?
-  booking.addEventListener("change", function () {
-    getBookingCost(booking);
+  const seatsSelect = document.getElementById("seatsSTA");  // for some reason query selector doesn't return the right data?
+  seatsSelect.addEventListener("change", function () {
+    setSeatData(seatsSelect);
   });
 
-  function setBookingData(seats) {
+  function setSeatData(seatsSelect) {
 
-    const selectedOption = booking.selectedOptions[0];
-    console.log(booking.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
-
-    console.log("setBookingData()");
+    const selectedOption = seatsSelect.selectedOptions[0];
+    if (priceLevel == 'discprice')
+    {
+      console.log("movie Session: " + movieSession);
+      // add the discount price to the movieSession
+      movieSession.staAmt = selectedOption.getAttribute("data-discprice");
+    }
+    else
+    {
+      console.log("movie Session: " + movieSession);
+      // add the full price to the movieSession
+      movieSession.staAmt = selectedOption.getAttribute("data-fullprice");
+    }
+    console.log(seatsSelect.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
+    console.log("movie Session: " + movieSession.day + ":" + movieSession.time + ":" + movieSession.staAmt);
   };
 
 </script>
