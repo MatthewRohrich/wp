@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 /* Put your PHP functions and modules here.
 Many will be provided in the teaching materials,
@@ -189,6 +189,7 @@ function validateMovieCode($movieCode)
   global $movies;
   if (!array_key_exists($movieCode, $movies)) {
     header('Location: index.php');
+    exit();
   }
 }
 
@@ -197,9 +198,9 @@ function seatSelection()
 {
   global $seats;
   foreach ($seats as $key => $seat) {
-    echo '<div class="seats">';
+    echo '<div class="seats seats-select" >';
     echo "{$seats[$key]['Type']}";
-    echo "<select name='seats[{$key}]'>";
+    echo "<select name='seats{$key}' id='seats{$key}' >";
     echo "<option value=''>Please Select</option>";
     for ($i = 1; $i <= 10; $i++) {
       $fullPrice = $seats[$key]['Normal'] * $i;
@@ -222,11 +223,11 @@ function displayMovieSessions($code)
   foreach ($movies[$code]['sessions'] as $sessKey => $sessTime) {
     $dataPricing = 'fullprice';
     if (($sessKey == 'Mon') or ($sessTime == "12pm")) {
-      $dataPricing = 'discountprice';
+      $dataPricing = 'discprice';
     }
     echo <<<"DISPLAYSESSIONS"
       <div class="button">
-        <input type=radio id='{$sessKey}' value="{$sessKey}" name='session' data-pricing="{$dataPricing}" /> 
+        <input type=radio id='{$sessKey}' value="{$sessKey}-{$sessTime}" name='session' data-pricing="{$dataPricing}" /> 
         <label for='{$sessKey}'>{$sessKey} - {$sessTime}</label>
       </div>
     DISPLAYSESSIONS;
