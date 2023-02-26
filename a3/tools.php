@@ -182,6 +182,33 @@ $seats = [
   ]
 ];
 
+
+$booking = [
+  'orderDate' => '',
+  'name' => '',
+  'email' => '',
+  'mobile' => '',
+  'movieCode' => '',
+  'day' => '',
+  'time' => '',
+  'staNo' => 0,
+  'staAmt' => 0,
+  'stpNo' => 0,
+  'stpAmt' => 0,
+  'stcNo' => 0,
+  'sccAmt' => 0,
+  'fcaNo' => 0,
+  'fcaAmt' => 0,
+  'fcpNo' => 0,
+  'fcpAmt' => 0,
+  'fccNo' => 0,
+  'fccAmt' => 0,
+  'total' => 0,
+  'gst' => 0
+
+
+];
+
 function validateMovieCode($movieCode)
 {
   // does the movie code exist if not someone has made a mistake
