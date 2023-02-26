@@ -117,6 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // this script has to go after the page is rendered or it will not work.
 
   movieSession = null;  // object store the selected movieSession and the pricelevel
+  priceLevel = null; // is this movie discounted?
 
   // add an eventlistener to the movie radio buttons to trigger when clicked
   const sessionButtons = document.querySelectorAll('input[name="session"]');
@@ -124,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     button => {
       button.addEventListener('change', function () {
         setMovieSession();
+        // I should be able to pass the button to the function so it is already the correct button.
         //console.log(button.value, button.getAttribute('data-pricing'));
       });
     });
@@ -137,11 +139,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
       if (radioButtons[i].checked)
       {
-        //console.log("SelectedValue: " + radioButtons[i].value);
-        //console.log("priceLevel: " + radioButtons[i].getAttribute('data-pricing'));
+        $booking[]
+        console.log("SessionDay: " + radioButtons[i].id);
+        console.log("SelectedTime: " + radioButtons[i].value);
+        console.log("priceLevel: " + radioButtons[i].getAttribute('data-pricing'));
 
         var movieSession = new Object();
         // Save the selected radio button and its value and pricing data
+        movieSession.id = radioButtons[i].id;
         movieSession.value = radioButtons[i].value;
         movieSession.priceLevel = radioButtons[i].getAttribute('data-pricing');
         break;
@@ -155,12 +160,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //loop through all the  dropdowns
   const booking = document.getElementById("seatsSTA");  // for some reason query selector doesn't return the right data?
   booking.addEventListener("change", function () {
-    setBookingData();
-    const selectedOption = booking.selectedOptions[0];
-    console.log(booking.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
+    getBookingCost(booking);
   });
 
-  function setBookingData() {
+  function setBookingData(seats) {
+
+    const selectedOption = booking.selectedOptions[0];
+    console.log(booking.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
+
     console.log("setBookingData()");
   };
 

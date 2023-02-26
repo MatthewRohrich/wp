@@ -254,7 +254,7 @@ function displayMovieSessions($code)
     }
     echo <<<"DISPLAYSESSIONS"
       <div class="button">
-        <input type=radio id='{$sessKey}' value="{$sessKey}-{$sessTime}" name='session' data-pricing="{$dataPricing}" /> 
+        <input type=radio id='{$sessKey}' value="{$sessTime}" name='session' data-pricing="{$dataPricing}" /> 
         <label for='{$sessKey}'>{$sessKey} - {$sessTime}</label>
       </div>
     DISPLAYSESSIONS;
