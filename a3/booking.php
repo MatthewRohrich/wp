@@ -150,19 +150,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 
-  // bookingData = null; //object to store the booking data
-  // // setup the events for the dropdown boxes
-  // //loop through all the  dropdowns
-  // const booking = document.getElementById("seatsSTA");  // for some reason query selector doesn't return the right data?
+  bookingData = null; //object to store the booking data
+  // setup the events for the dropdown boxes
+  //loop through all the  dropdowns
+  const booking = document.getElementById("seatsSTA");  // for some reason query selector doesn't return the right data?
+  booking.addEventListener("change", function () {
+    setBookingData();
+    const selectedOption = booking.selectedOptions[0];
+    console.log(booking.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
+  });
 
-  // setBookingData();
-  // const selectedOption = booking.selectedOptions[0];
-  // console.log(booking.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
-  // });
-
-  // function setBookingData() {
-  //   console.log("setBookingData()");
-  // };
+  function setBookingData() {
+    console.log("setBookingData()");
+  };
 
 </script>
 
