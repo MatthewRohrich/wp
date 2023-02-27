@@ -35,20 +35,6 @@ function prefillForm()
 
 
 
-// do we have valid movie code in get or post data
-// set it or redirect
-// if (isset($_GET['movie'])) {
-//   $movieCode = $_GET['movie'];
-//   validateMovieCode($movieCode);
-// } else {
-//   $postErrors = validateBooking();
-//   $movieCode = $_POST['movie'];
-//   validateMovieCode($movieCode);
-
-//   // re-populate the fields
-// }
-
-
 ?>
 
 
@@ -118,7 +104,7 @@ function prefillForm()
               placeholder="04nn nnn nnn" value=""> <!-- required> -->
           </p>
           <p><input id="submitBooking" type='submit' name='submit' value='Book' /></p>
-          <p><input id="#submitNoValidate" type='submit' name='submit-novalidate' value='Book' novalidate /></p>
+          <p><input id="submitNoValidate" type='submit' name='submit2' value='Book no-validate' novalidate /></p>
         </div>
     </form>
   </article>
