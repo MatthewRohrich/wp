@@ -248,8 +248,32 @@ div.movieCards:hover > div:nth-child(2) {
   position: relative;
   left: 5em;
 }
+#submitNoValidate {
+  font: bold 22px Arial;
+  text-decoration: none;
+  background-color: var(--Rust-Red);
+  color: var(--Dust-Pink);
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  border-top: 1px solid var(--Border-Light);
+  border-right: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border-Dark);
+  border-left: 1px solid var(--Border-Light);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 5em;
+}
 
 #submitBooking:hover {
+  background-color: var(--Dust-Pink);
+  color: var(--Gun-Metal);
+  border-top: 1px solid var(--Border-Dark);
+  border-right: 1px solid var(--Border-Light);
+  border-bottom: 1px solid var(--Border-Light);
+  border-left: 1px solid var(--Border-Dark);
+}
+
+#submitNoValidate:hover {
   background-color: var(--Dust-Pink);
   color: var(--Gun-Metal);
   border-top: 1px solid var(--Border-Dark);

@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
 /* Put your PHP functions and modules here.
 Many will be provided in the teaching materials,

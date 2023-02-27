@@ -6,18 +6,31 @@ include './head.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   require_once("post-validation.php");
-  //$errors = validateBooking();   // validate booking does not work as is;
-  $errors = [];
+  $movieCode = $_POST['movie'];
+  $errors = validateBooking();
   if (count($errors) == 0) {
     $_SESSION = $_POST;
-    $movieCode = $_POST['movie'];
+  } else {
+    validateMovieCode($movieCode); //this will redirect to index.php if movie has invalid code
+    // reload the form data and show errors
+    prefillForm();
+
   }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-
   if (isset($_GET['movie'])) {
     $movieCode = $_GET['movie'];
     validateMovieCode($movieCode); //this will redirect to index.php if movie is invalid
   }
+}
+
+function prefillForm()
+{
+
+  // foreach ($_SESSION as $key => $setting) {
+  //   echo $key . '' . $setting;
+
+  // }
+
 }
 
 
@@ -95,16 +108,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="bookingDetails">
 
           <p><label for="name">Name: </label>
-            <input type=text id="name" name="name" value="" required>
+            <input type=text id="name" name="name" value=""> <!-- required > -->
           </p>
           <p><label for="email">Email: </label>
-            <input type=email id="email" name="email" value="" required>
+            <input type=email id="email" name="email" value=""> <!--  required> -->
           </p>
           <p><label for="mobile">Mobile Num: </label>
             <input type=tel id="mobile" name="mobile" pattern="[0-9]{4}[ ]][0-9]{3}[ ][0-9]{3}"
-              placeholder="04nn nnn nnn" value="" required></span>
+              placeholder="04nn nnn nnn" value=""> <!-- required> -->
           </p>
           <p><input id="submitBooking" type='submit' name='submit' value='Book' /></p>
+          <p><input id="#submitNoValidate" type='submit' name='submit-novalidate' value='Book' novalidate /></p>
         </div>
     </form>
   </article>
