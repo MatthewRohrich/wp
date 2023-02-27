@@ -39,6 +39,8 @@ function validateBooking()
   }
   return $errors; // empty array -> no errors; populated array -> errors.
 }
+
+// not used this was supplied as part of the template code
 function suppliedValidateBooking()
 {
   $errors = []; // new empty array to return multiple error messages
