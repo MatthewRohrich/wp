@@ -168,18 +168,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     const selectedOption = seatsSelect.selectedOptions[0];
     if (priceLevel == 'discprice')
     {
-      console.log("movie Session: " + movieSession);
+      //console.log("movie Session: " + movieSession);
       // add the discount price to the movieSession
       movieSession.staAmt = selectedOption.getAttribute("data-discprice");
     }
     else
     {
-      console.log("movie Session: " + movieSession);
+      //console.log("movie Session: " + movieSession);
       // add the full price to the movieSession
       movieSession.staAmt = selectedOption.getAttribute("data-fullprice");
     }
-    console.log(seatsSelect.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
-    console.log("movie Session: " + movieSession.day + ":" + movieSession.time + ":" + movieSession.staAmt);
+    //console.log(seatsSelect.value + ' ' + selectedOption.getAttribute("data-fullprice") + ' ' + selectedOption.getAttribute("data-discprice"));
+    //console.log("movie Session: " + movieSession.day + ":" + movieSession.time + ":" + movieSession.staAmt);
   };
 
 </script>
