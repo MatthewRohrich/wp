@@ -300,11 +300,20 @@ div.movieCards:hover > div:nth-child(2) {
   bottom: 0;
 }
 
-.button input[type="radio"] {
+.button input[type="checkbox"] {
   opacity: 0.011;
   z-index: 100;
 }
 
+.button input[type="checkbox"]:checked + label {
+  background: var(--Dust-Pink);
+  border-radius: 4px;
+  color: var(--Gun-Metal);
+}
+.button input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
 .button input[type="radio"]:checked + label {
   background: var(--Dust-Pink);
   border-radius: 4px;
