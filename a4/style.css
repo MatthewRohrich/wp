@@ -302,12 +302,14 @@ div.movieCards:hover > div:nth-child(2) {
   bottom: 0;
 }
 
+/* new remember me button */
 .remember input[type="checkbox"]:checked + label {
   background: var(--Dust-Pink);
   border-radius: 4px;
   color: var(--Gun-Metal);
 }
 
+/* previous button was changing size because the size was fixed on the checkbox not the label */
 .remember label {
   width: 110px;
   background-color: var(--Rust-Red);
@@ -316,6 +318,7 @@ div.movieCards:hover > div:nth-child(2) {
   z-index: 90;
   line-height: 1.8em;
 }
+
 .button input[type="radio"]:checked + label {
   background: var(--Dust-Pink);
   border-radius: 4px;
@@ -334,6 +337,7 @@ div.seats-image img {
   width: 15em;
 }
 
+/* easier way to hide items just add this class to them. */
 .hidden {
   position: absolute;
   visibility: hidden;
