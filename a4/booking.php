@@ -237,9 +237,12 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
       margin: 10px;
 
     }
+
+
+    }
   </style>
 
-  <!-- <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>"> -->
+  <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
 
   <script src='./script.js'></script>
   <script>
@@ -321,14 +324,29 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
         <input type='email' name="user[email]" id="email" value='' placeholder="Email" /><br>
         <input type='tel' name="user[mobile]" id="mobile" value='' placeholder="Mobile" />
       </fieldset>
+      <style>
+        /* 
+        input[type=checkbox]+label {
+          color: #ccc;
+          font-style: italic;
+        }
 
+        input[type=checkbox]: checked+label {
+          color: #f00;
+          font-style: normal;
+        } */
+      </style>
       <fieldset>
-        <div class='button'>
-          <input type='checkbox' id='remember' name='remember'>
-          <label id='remember-label' for='checkbox'>Remember Me</label>
+        <div class='remember'>
+
+          <input type='checkbox' id='remember' name='remember' class='hidden'>
+          <label id='remember-label' for='remember'>
+            Remember Me
+
+          </label>
         </div>
       </fieldset>
-      <button id='showme'>Show me the stores</button>
+      <!-- <button id='showme'>Show me the stores</button> <span id='remember-errors'></span> -->
 
       <script type="text/javascript">
         var store = window.localStorage;
@@ -350,14 +368,6 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
           }
         };
 
-        // var outputElement = document.getElementById('showresult');
-
-        // // probably won't need this.
-        // function replace(element, text) {
-        //   element.textContent = text;
-
-        // };
-
         document.getElementById('remember').addEventListener('click', function () {
           if (this.checked)
           {
@@ -365,27 +375,30 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
             store.setItem('name', document.getElementById('name').value);
             store.setItem('email', document.getElementById('email').value);
             store.setItem('mobile', document.getElementById('mobile').value);
-            document.getElementById('showresult').textContent = 'created the results';
+            document.getElementById('remember-label').textContent = 'Forget Me';
+            //document.getElementById('remember-errors').textContent = 'created the results';
           } else
           {
             store.clear();
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
             document.getElementById('mobile').value = '';
-            document.getElementById('showresult').textContent = 'deleted the results';
+            document.getElementById('remember-label').textContent = 'Remember Me';
+            //document.getElementById('remember-errors').textContent = 'deleted the results';
           }
 
 
         });
 
-        document.getElementById('showme').addEventListener('click', function () {
-          var result;
-          result = store.getItem('name') + ' ' + store.getItem('email') + ' ' + store.getItem('mobile');
-          document.getElementById('showresult').textContent = result;
-          //replace(outputElement, result);
-        });
+        //button for testing 
+        // document.getElementById('showme').addEventListener('click', function () {
+        //   var result;
+        //   result = store.getItem('name') + ' ' + store.getItem('email') + ' ' + store.getItem('mobile');
+        //   document.getElementById('remember-errors').textContent = result;
+        //   //replace(outputElement, result);
+        // });
       </script>
-      <span id='showresult'></span>
+
       <fieldset>
         <legend>Submit Options</legend>
         <button id="submitCS" name='submitCS'>Order &amp; check<br>Client-Side Validation</button>
