@@ -2,8 +2,31 @@
 include './tools.php';
 include './head.php';
 
+$name = 'bob';
+$email = 'bob@email.com';
+
+
+$foundData = [];
 // Assumptions
 // data stored in bookings.txt
+$bookFile = fopen('bookings.txt', 'r');
+//echo fread($bookFile, filesize('bookings.txt'));
+while (!feof($bookFile)) {
+    //read and print one line
+    // print_r(fgetcsv($bookFile));
+    $row = fgetcsv($bookFile);
+    if (($row[2] == $name) and ($row[3] == $email)) {
+        echo 'We found Bob! ' . $name . ' ' . $email;
+        array_push($foundData, [$row]);
+    }
+    print_r($foundData);
+}
+//
+
+
+
+fclose($bookFile);
+
 
 ?>
 
