@@ -357,6 +357,7 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
 
   </main>
 
+  <?php include './footer.php' ?>
   <hr>
 
   <footer>
@@ -377,6 +378,7 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
       <?php print_r($_SESSION); ?>
     </pre>
   </footer>
+
 </body>
 
 </html>
