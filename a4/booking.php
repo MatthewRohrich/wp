@@ -244,7 +244,7 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
 
   <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
 
-  <script src='./script.js'></script>
+
   <script>
     var moviesObjectJS = <?= json_encode($moviesObject, JSON_PRETTY_PRINT) ?>;
     var seatsObjectJS = <?= json_encode($seatsObject, JSON_PRETTY_PRINT) ?>;
@@ -339,8 +339,8 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
       <fieldset>
         <div class='remember'>
 
-          <input type='checkbox' id='remember' name='remember' class='hidden'>
-          <label id='remember-label' for='remember'>
+          <input type='checkbox' id='remember-check' name='remember' class='hidden'>
+          <label id='remember-label' for='remember-check'>
             Remember Me
 
           </label>
@@ -354,6 +354,7 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
         <button id="submitSS" name='submitSS' formnovalidate>Order &amp; check<br>Server-Side Validation</button>
       </fieldset>
     </form>
+    <script src='./booking-tools.js'></script>
 
   </main>
 
@@ -378,7 +379,6 @@ if (isset($_GET['movie']) && isset($moviesObject[$_GET['movie']])) {
       <?php print_r($_SESSION); ?>
     </pre>
   </footer>
-
 </body>
 
 </html>

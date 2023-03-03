@@ -12,14 +12,16 @@ $foundData = [];
 $bookFile = fopen('bookings.txt', 'r');
 //echo fread($bookFile, filesize('bookings.txt'));
 while (!feof($bookFile)) {
-    //read and print one line
-    // print_r(fgetcsv($bookFile));
+
     $row = fgetcsv($bookFile);
-    if (($row[2] == $name) and ($row[3] == $email)) {
+    print_r($row[1]); //read and print one line
+    echo '<br>';
+    if (($row[1] == $name) and ($row[2] == $email)) {
+
         echo 'We found Bob! ' . $name . ' ' . $email;
-        array_push($foundData, [$row]);
+        array_push($foundData, $row);
     }
-    print_r($foundData);
+    // print_r($foundData);
 }
 //
 
