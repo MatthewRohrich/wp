@@ -2,9 +2,10 @@
 include './tools.php';
 include './head.php';
 
-$name = 'bob';
-$email = 'bob@email.com';
+// testing without a form
 
+$emailSearch = 'bob@email.com';
+$mobileSearch = '0422 555 555';
 
 $foundData = [];
 // Assumptions
@@ -14,12 +15,19 @@ $bookFile = fopen('bookings.txt', 'r');
 while (!feof($bookFile)) {
 
     $row = fgetcsv($bookFile);
-    print_r($row[1]); //read and print one line
+    print_r($row[2]); //read and print one line
+    echo ': search term: ' . $emailSearch;
     echo '<br>';
-    if (($row[1] == $name) and ($row[2] == $email)) {
+    $emailResult = $row[2];
+    $mobileResult = $row[3];
 
-        echo 'We found Bob! ' . $name . ' ' . $email;
-        array_push($foundData, $row);
+
+
+    //if (($emailResult == $emailSearch) and ($mobileResult == $mobileSearch)) {
+    if (($emailResult == $emailSearch)) {
+        // can't get any result at all
+        echo 'We found Bob! ' . $emailResult;
+        array_push($foundData, $row); //supposed to add found result 
     }
     // print_r($foundData);
 }
