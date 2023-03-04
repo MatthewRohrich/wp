@@ -2,45 +2,55 @@
 include './tools.php';
 include './head.php';
 
-$emailSearch = $_POST['booking']['email'];
-$mobileSearch = $_POST['booking']['mobile]'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $emailSearch = $_POST['booking']['email'];
+    $mobileSearch = $_POST['booking']['mobile]'];
 
-// testing without a form POST
-//$emailSearch = 'bob@email.com';
-//$mobileSearch = '0422 555 555';
-
-
-
-
-$foundData = [];
-// Assumptions
-// data stored in bookings.txt
-$bookFile = fopen('bookings.txt', 'r');
-//echo fread($bookFile, filesize('bookings.txt'));
-while (!feof($bookFile)) {
-
-    $row = fgetcsv($bookFile);
-    print_r($row[2]); //read and print one line
-    echo ': search term: ' . $emailSearch;
-    echo '<br>';
-    $emailResult = $row[2];
-    $mobileResult = $row[3];
+    // testing without a form POST
+    //$emailSearch = 'bob@email.com';
+    //$mobileSearch = '0422 555 555';
 
 
 
-    //if (($emailResult == $emailSearch) and ($mobileResult == $mobileSearch)) {
-    if (($emailResult == $emailSearch)) {
-        // can't get any result at all
-        echo 'We found Bob! ' . $emailResult;
-        array_push($foundData, $row); //supposed to add found result 
+
+    $foundData = [];
+    // Assumptions
+    // data stored in bookings.txt
+    $bookFile = fopen('bookings.txt', 'r');
+    //echo fread($bookFile, filesize('bookings.txt'));
+    while (!feof($bookFile)) {
+
+        $row = fgetcsv($bookFile);
+        print_r($row[2]); //read and print one line
+        echo ': search term: ' . $emailSearch;
+        echo '<br>';
+        $emailResult = $row[2];
+        $mobileResult = $row[3];
+
+
+
+        //if (($emailResult == $emailSearch) and ($mobileResult == $mobileSearch)) {
+        if (($emailResult == $emailSearch)) {
+            // can't get any result at all
+            echo 'We found Bob! ' . $emailResult;
+            array_push($foundData, $row); //supposed to add found result 
+        }
+        // print_r($foundData);
     }
-    // print_r($foundData);
+    //
+
+
+
+    fclose($bookFile);
+
+
+
+
+} else {
+    echo '<h2>Sorry no bookings found</h2>';
 }
-//
 
 
-
-fclose($bookFile);
 
 
 ?>
