@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 } else {
-    echo '<h2>Sorry no bookings found</h2>';
+    echo '<h1>Sorry no bookings found</h1>';
 }
 
 
