@@ -2,10 +2,15 @@
 include './tools.php';
 include './head.php';
 
-// testing without a form
+$emailSearch = $_POST['booking']['email'];
+$mobileSearch = $_POST['booking']['mobile]'];
 
-$emailSearch = 'bob@email.com';
-$mobileSearch = '0422 555 555';
+// testing without a form POST
+//$emailSearch = 'bob@email.com';
+//$mobileSearch = '0422 555 555';
+
+
+
 
 $foundData = [];
 // Assumptions
