@@ -228,7 +228,7 @@
       <div>&copy;
         <script>
           document.write(new Date().getFullYear());
-        </script> Matthew Rohrich, s3256609. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
+        </script> Matthew Rohrich, studentNumber. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
         <a id="github" href="https://github.com/matthewrohrich/wp" target="_blank">Matthews Github</a>  
       </div>
       <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
