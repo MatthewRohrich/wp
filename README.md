@@ -8,8 +8,11 @@ when they were marked.
 marks were.
 
 A1- 10/10
+
 A2- 24.5/30
+
 A3- 20.5/40
+
 A4- 17/20
 
 Overall score for the subject was 72%  or a Distinction
