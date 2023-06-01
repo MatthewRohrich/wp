@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Matthew Rohrich">
+  <meta name="description" content="My first webpage">
+  <!-- meta http-equiv="X-Frame-Options" content="deny" -->
+
+  <title>My First Webpage</title>
+
+  <!-- Stylesheets, you can have more than one. -->
+  <link id="wireframecss" type="text/css" rel="stylesheet" href="wireframe.css">
+  <link id="stylecss" type="text/css" rel="stylesheet" href="style.css">
+  <link id="testcss" type="text/css" rel="stylesheet" href="testing.css">
+
+  <!-- Places an icon in the tab, feel free to create your own! -->
+  <link rel="icon" href="/~id/img/TrevBottleBrushIcon.png" type="image/x-icon">
+
+  <!-- Javascript, you can have more than one. -->
+  <script src="wireframe.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Image sourced from www.rmit.edu.au for educational purposes only -->
+    <div>
+      <img src="../media/RMIT-Logo.png" alt="RMIT University logo" height="80">Matthew Rohrich
+    </div>
+  </header>
+
+  <nav>
+    Assignments:
+    <!-- link locations: relative to current directory -->
+    <ul>
+      <li><a href="a2/index.php" target="_blank">A2</a></li>
+      <li><a href="a3/index.php" target="_blank">A3</a></li>
+    </ul>
+    |
+    <!-- link locations: relative to id's public_html directory -->
+    <a href="/~id/wp" target="_blank">Course Homepage</a> |
+    <a href="/~id/wp/lectures" target="_blank">Lectures 0 - 11</a> |
+    <a href="/~id/secure" target="_blank">Secure Resources Area</a>
+  </nav>
+
+  <main>
+    <article id="about-me">
+      <h2>About me</h2>
+      <p>
+        <img src="../media/avatar.png" width="200" alt="my photo">
+      </p>
+      <section id="more-about-me">
+        <h3>Who is the course instructor</h3>
+        <p>snipped...</p>
+
+        <h3>Who is your class tutor</h3>
+        <p>snipped...</p>
+
+        <p> snipped for privacy reasons</p>
+
+        <h3>What websites do you use the most?</h3>
+        <!-- referenced list tags from Trevors lecture slides -->
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ul>
+
+
+        <h3>Do you have any interests or hobbies?</h3>
+        <div class="interests">
+          <ul>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+          </ul>
+        </div>
+
+      </section>
+    </article>
+
+    <aside>
+      <!-- deprecated code removed as detected by https://validator.w3.org/nu -->
+    </aside>
+  </main>
+  <footer>
+    &copy; Matthew Rohrich
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    <noscript>1989</noscript>.
+    <a id="github" href="https://github.com/matthewrohrich/wp" target="_blank">Github</a> &nbsp;
+    <!-- Put a clickable link to your git repo here (important!) and other links if 
+    you wish. -->
+    <button id="toggleWireframeCSS" onclick="toggleWireframe()">
+      Toggle Wireframe CSS
+    </button>
+  </footer>
+</body>
+
+</html>
